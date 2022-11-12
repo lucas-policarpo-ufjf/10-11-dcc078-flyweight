@@ -24,4 +24,17 @@ public class PlaylistTest {
 
     assertEquals(response, playlist.getMusics());
   }
+
+  @Test
+  void shouldReturnTotalMusicsCorrectly() {
+    Playlist playlist = new Playlist("Favoritos");
+    playlist.addMusic("After hours", "The Weeknd", "2020");
+    playlist.addMusic("After hours", "The Weeknd", "2020");
+    playlist.addMusic("After hours", "The Weeknd", "2020");
+    playlist.addMusic("Go get it", "Slowdive", "2021");
+    playlist.addMusic("Go get it", "Slowdive", "2021");
+
+    assertEquals(2, MusicFactory.getTotalMusics());
+  }
+
 }
